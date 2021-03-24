@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  transition: .3s;
+}
+html{
+  background-color: white;
+}
+body{
+  display: grid;
+  grid-template-columns: 400px 800px;
+  grid-template-rows: 130px 800px 50px;
+  margin: auto;
+  width: 1200px;
+  background-color: lightblue;
+  
+}
+header { 
+  grid-row: 1/2;
+  grid-column: 1/3;
+  background-color: rgb(57, 57, 218);
+  height: 100px;
+  font-family: arial, sans-serif;
+  text-align: center;
+  padding: 0;
+  margin-top: 40px;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  min-width: 40em;
+  background-color: #b3c7e6;
+  z-index: 1;
+}
+nav ul { 
+  list-style-type: none;
+  text-align: right;
+  font-size: 1.2em;
+  margin: 5px; 
+  padding-right: 10%
+}
+nav li{
+  display: inline;
+}
+nav a { 
+  text-decoration: none;
+}
+nav a:hover { 
+  background-color: gray;
+  text-decoration-color: red;
+}
+
+aside {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  
+}
+main {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+div.lin {
+  float: left;
+  height: 250px;
+  width: 160px;
+  border: 5px white solid;
+  margin: 10px;  
+}
+
+#linSection h1,h2,h3{
+  color: blue;
+  text-align: center;
+  font-family: arial, sans-serif;
+}
+#linSection span {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  color: blue;
+  font-family: arial, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}
+#linSection a{
+  text-decoration: none;
+}
+div.lin a:after {
+  content: attr(title);
+}
+div.lin{
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+} 
+div.lin:first-child {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+div.lin:nth-child(2) {
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+}
+div.lin:nth-child(3n) {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  transform: rotate(3deg);
+  position: relative;
+  top: -5px;
+}
+div.lin:nth-child(3n+1) {
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+  position: relative;
+  top: -5px;
+}
+div.lin:nth-child(5) {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  transform: rotate(5deg);
+  position: relative;
+  right: 5px; 
+}
+div.lin:last-child {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  position: relative;
+  top: 8px;
+  right: 5px;
+}
+div.lin:hover {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+div.lin:hover {
+  -webkit-box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+  -moz-box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+  box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+}
+
+#gaoSection .card {
+  margin: auto;
+  perspective: 800px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
+  
+#gaoSection .card:hover {
+    transform: scale(1.5);
+}
+#gaoSection .card:hover .side {
+      opacity: 1;
+}
+  
+
+.card {
+  transform-style: preserve-3d;
+  position: relative;
+  top: 80px;
+  left: 10px;
+  width: 200px;
+  height: 200px;
+  animation: rotate 20s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.side {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.back {
+  transform: translateZ(-100PX) rotateX(180deg);
+  background-image: url("../images/nanaimo_1.jpg"); 
+}
+
+.left {
+  transform: translateX(-100px) rotateY(90deg);
+  background-image: url("../images/seattle_1.jpg"); 
+}
+
+.right {
+  transform: translateX(100px) rotateY(90deg);
+  background-image: url("../images/portland_1.jpg"); 
+}
+
+.top {
+  transform: translateY(-100px) rotateX(90deg);
+  background-image: url("../images/portland_2.jpg"); 
+}
+
+.bottom {
+  transform: translateY(100px) rotateX(270deg);
+  background-image: url("../images/nanaimo_2.jpg"); 
+}
+ 
+.front {
+  transform: translateZ(100px); 
+  background-image: url("../images/seattle_2.jpg"); 
+}
+
+@keyframes rotate {
+  0% { transform: rotateX(0)}
+  12.5% { transform: rotateY(90deg)}
+  25% { transform: rotateY(270deg)}
+  37.5% { transform: rotateY(270deg)}
+  50% { transform: rotateY(360deg)}
+  62.5% { transform: rotateX(90deg)}
+  75% { transform: rotateX(180deg)}
+  87.5% { transform: rotateX(270deg)}
+  100% { transform: rotateX(360deg)}
+}
+footer#chenSection { 
+  grid-row: 3/4; 
+  grid-column: 1/3; 
+}
+footer#chenSection span {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  font-family: arial, sans-serif;
+  color: blue; 
+}
